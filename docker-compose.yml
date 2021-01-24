@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    command: mysqld --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: Fitness_Judge2
+      TZ: "Asia/Tokyo"
+    ports:
+    - '7303:3306'
+    volumes:
+    - ./docker/config/my.cnf:/etc/mysql/conf.d/my.cnf
+    - data
+  data:
+    image: 'busybox'
+    volumes:
+    - './docker/storage/db:/var/lib/mysql'
