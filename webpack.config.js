@@ -11,10 +11,8 @@ module.exports = {
   mode: isProd ? "production" : "development",
   devtool: "source-map",
   entry: {
-    backend: path.resolve(__dirname, "app/frontend/js/packs/backend.tsx"),
-    client_frontend: path.resolve(__dirname, "app/frontend/js/packs/client_frontend.tsx"),
-    'client_frontend/top': path.resolve(__dirname, "app/frontend/js/packs/client_frontend/top.tsx"),
-    'client_frontend/work_shift': path.resolve(__dirname, "app/frontend/js/packs/client_frontend/work_shift.tsx")
+    backend: path.resolve(__dirname, "app/frontend/js/packs/backend/application.tsx"),
+    frontend: path.resolve(__dirname, "app/frontend/js/packs/frontend/application.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "public/packs"),
