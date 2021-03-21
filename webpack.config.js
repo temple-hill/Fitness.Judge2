@@ -3,7 +3,6 @@ const WebpackAssetsManifest = require("webpack-assets-manifest");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require('dotenv-webpack');
 const LiveReloadPlugin = require("webpack-livereload-plugin");
-const webpack = require("webpack");
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
@@ -100,29 +99,6 @@ module.exports = {
     new Dotenv({
       systemvars: true,
     }),
-    new LiveReloadPlugin(),
-    new webpack.DefinePlugin({
-      WORK_STATUSES: JSON.stringify({
-        before_work: '出勤前',
-        working: '勤務中',
-        on_break: '休憩中',
-        left: '退勤済み',
-      }),
-      HOLIDAY_TYPE: JSON.stringify({
-        all_day: '1日',
-        morning: '半日(午前休)',
-        afternoon: '半日(午後休)'
-      }),
-      PUNCH_MODE: JSON.stringify({
-        work_from: '出勤',
-        work_to: '退勤',
-        break_from: '休憩',
-        break_to: '戻り',
-      }),
-      ALERT: JSON.stringify({
-        missing_punch: '打刻漏れ',
-        wrong_punch: '打刻間違い',
-      }),
-    }),
+    new LiveReloadPlugin()
   ]
 };
