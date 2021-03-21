@@ -1,0 +1,6 @@
+{
+  "backend.js": "/packs/backend.js",
+  "backend.js.map": "/packs/backend.js.map",
+  "frontend.js": "/packs/frontend.js",
+  "frontend.js.map": "/packs/frontend.js.map"
+}

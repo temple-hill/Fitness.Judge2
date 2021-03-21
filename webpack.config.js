@@ -2,7 +2,6 @@ const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require('dotenv-webpack');
-const LiveReloadPlugin = require("webpack-livereload-plugin");
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
@@ -97,6 +96,5 @@ module.exports = {
     new Dotenv({
       systemvars: true,
     }),
-    new LiveReloadPlugin()
   ]
 };
