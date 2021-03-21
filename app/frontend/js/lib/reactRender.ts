@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 const reactRender = (renders: {[key: string]: JSX.Element}): void => {
-  const getElementData = (element: HTMLElement): object => {
+  const getElementData = (element: HTMLElement): Record<string, unknown> => {
     const dataset = element.dataset;
     let data = {};
     if (dataset['props']) {
